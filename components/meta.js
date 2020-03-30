@@ -6,7 +6,7 @@ const makeTitle = title => (title === name ? title : `${title} – ${name}`);
 
 export default ({
   title = name,
-  description = 'My site.',
+  description = "Adway Wadekar's home on the web.",
   color = palette.primary
 }) => (
   <Head>

@@ -7,7 +7,7 @@ export default () => (
         maxWidth: 640,
         alignItems: 'center',
         justifyContent: 'center',
-        color: 'muted',
+        color: 'text',
         a: { color: 'inherit' }
       }}
     >

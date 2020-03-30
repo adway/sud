@@ -22,22 +22,22 @@ const textStyles = {
   },
   h2: {
     ...heading,
-    fontSize: 2
+    fontSize: 1
   },
   h3: {
     ...heading,
-    fontSize: 2
+    fontSize: 1
   },
   h4: {
     ...heading,
-    fontSize: 2
+    fontSize: 1
   },
   a: {
-    color: 'primary',
+    color: 'text',
     cursor: 'pointer',
     WebkitTextUnderlinePosition: 'under',
     ':hover,:focus': {
-      color: 'primaryLight'
+      color: 'primary'
     }
   },
   img: {
@@ -57,8 +57,7 @@ export const palette = {
   snow: '#fafafa',
   white: '#ffffff',
   sand: '#f5efe6',
-  primary: '#006CAB',
-  primaryLight: '#128BD2',
+  primary: '#128BD2',
   muted: '#444',
   mutedLight: '#ccb',
   border: 'rgba(0,0,0,0.1)'
@@ -83,7 +82,7 @@ const theme = merge(base, {
       dark: {
         text: palette.white,
         background: palette.dark,
-        primary: palette.primaryLight,
+        primary: palette.primary,
         elevated: palette.darkless,
         sunken: palette.darker,
         border: palette.darkless,
@@ -112,7 +111,7 @@ const theme = merge(base, {
   sizes: {
     ultrawide: 2048,
     wide: 1536,
-    container: 800,
+    container: 900,
     subcontainer: 1024,
     narrowplus: 768,
     narrow: 512

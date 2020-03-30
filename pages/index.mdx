@@ -4,11 +4,18 @@ import { Mail, Twitter } from 'react-feather'
 
 
 <Container
-  
   sx={{
     h2: { mb: 2 },
-    em: { color: 'muted', display: 'block' }
+    em: { color: 'muted', display: 'block' },
+    img: {
+        maxWidth: '20%',
+        borderRadius: 'extra'
+      }
   }}>
+
+![Adway](/adway.jpg)
+
+<div>
 
 # Hi, I'm Adway. 
 
@@ -16,12 +23,24 @@ I’m a junior at Saint John’s High School in Shrewsbury, Massachusetts. I am 
 
 I am the 2019-2020 Photographer in Residence for the Town of Westborough. I document Westborough's history as it happens through photography. Specifically, I try to portray daily life through the eyes of young children. You can read my vision statement for this project [here](/vision.pdf). The photos that I take for this project will be posted [here](https://instagram.com/thewestborougharchive), although the account is not nearly as updated as it should be. At the end of my term, I will compile all of my photographs from the past year into a book, so that future citizens of Westborough and historians alike can take a look at what Westborough was like in the interesting time in which we live.
 
-Apart from my scientific research and my photography, I am a writer for the Community Advocate and the president of my school's mock trial team.
+Apart from my scientific research and my photography, I am a writer for the Community Advocate and the president of my school's mock trial team. I also enjoy helping others learn so I am a peer tutor in the academic center at my school.
+
+
+<Flex sx={{ 
+  
+  alignItems: 'center', 
+  a: { mr: 4 } 
+  
+}}>
 
 <Button as="a" variant="muted" href="mailto:adway@adway.io">
   <Mail />
   Email me
 </Button>
+
+</Flex>
+
+</div>
 
 </Container>
 

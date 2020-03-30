@@ -33,7 +33,7 @@ const ColorSwitcher = props => {
     <NavButton
       {...props}
       onClick={() => setMode(mode === 'dark' ? 'light' : 'dark')}
-      title='Invert Colors'
+      title='Change Color Scheme'
     >
       <Zap size={24} />
     </NavButton>
@@ -83,9 +83,16 @@ export default () => (
           </NavLink>
         </Flex>
       </Link>
-      <Link href='/work' passHref>
-        <NavLink>My Work</NavLink>
+      <Link href='/cv' passHref>
+        <NavLink>CV</NavLink>
       </Link>
+      <Link href='/research' passHref>
+        <NavLink>Research</NavLink>
+      </Link>
+      <Link href='/writing' passHref>
+        <NavLink>Writing</NavLink>
+      </Link>
+
       <ColorSwitcher />
     </Container>
   </Box>
