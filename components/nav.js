@@ -93,9 +93,6 @@ export default () => (
           </NavLink>
         </Flex>
       </Link>
-      <Link href='/cv' passHref>
-        <NavLink>CV</NavLink>
-      </Link>
       <Link href='/research' passHref>
         <NavLink>Research</NavLink>
       </Link>
