@@ -54,7 +54,7 @@ export default () => (
         display: 'flex',
         alignItems: 'center',
         a: {
-          fontSize: 2,
+          fontSize: 1,
           color: 'text',
           fontWeight: 'body',
           textDecoration: 'none',

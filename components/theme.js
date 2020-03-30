@@ -22,7 +22,7 @@ const textStyles = {
   },
   h2: {
     ...heading,
-    fontSize: 1
+    fontSize: 2
   },
   h3: {
     ...heading,
