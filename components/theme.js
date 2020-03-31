@@ -60,7 +60,9 @@ export const palette = {
   primary: '#128BD2',
   muted: '#504c52',
   mutedLight: '#ccb',
-  border: 'rgba(0,0,0,0.1)'
+  border: 'rgba(0,0,0,0.1)',
+  cream: '#EFE3D5',
+  coffee: '#1c140a'
 };
 
 const theme = merge(base, {
@@ -71,8 +73,8 @@ const theme = merge(base, {
   useColorSchemeMediaQuery: true,
   colors: {
     ...palette,
-    text: palette.black,
-    background: palette.white,
+    text: palette.coffee,
+    background: palette.cream,
     elevated: palette.white,
     sunken: palette.smoke,
     border: palette.border,
@@ -80,8 +82,8 @@ const theme = merge(base, {
     muted: palette.muted,
     modes: {
       dark: {
-        text: palette.white,
-        background: palette.dark,
+        text: palette.cream,
+        background: palette.coffee,
         primary: palette.primary,
         elevated: palette.darkless,
         sunken: palette.darker,
