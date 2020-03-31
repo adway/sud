@@ -58,7 +58,7 @@ export const palette = {
   white: '#ffffff',
   sand: '#f5efe6',
   primary: '#128BD2',
-  muted: '#444',
+  muted: '#504c52',
   mutedLight: '#ccb',
   border: 'rgba(0,0,0,0.1)'
 };
