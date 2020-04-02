@@ -12,7 +12,7 @@ const heading = {
 
 const textStyles = {
   color: 'text',
-  fontFamily: "'Nunito',serif",
+  fontFamily: '"Times", serif',
   fontSize: 1,
   fontWeight: 'body',
   lineHeight: 'body',
