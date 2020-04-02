@@ -28,5 +28,9 @@ export default ({
 
     <meta key='theme_color' name='theme-color' content={color} />
     <meta key='tile_color' name='msapplication-TileColor' content={color} />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap'
+      rel='stylesheet'
+    />
   </Head>
 );
