@@ -1,51 +1,51 @@
 import { base } from '@theme-ui/presets';
 import { merge } from 'lodash';
 
-export const breakpoints = [32, 48, 64, 96, 128].map(w => `${w}em`);
+export const breakpoints = [32, 48, 64, 96, 128].map((w) => `${w}em`);
 
 const heading = {
   // fontFamily: 'heading',
   lineHeight: 'heading',
   fontWeight: 'heading',
-  letterSpacing: 'heading'
+  letterSpacing: 'heading',
 };
 
 const textStyles = {
   color: 'text',
-  fontFamily: '"Times", serif',
+  fontFamily: '"Gentium Basic", serif',
   fontSize: 1,
   fontWeight: 'body',
   lineHeight: 'body',
   h1: {
     ...heading,
-    fontSize: 3
+    fontSize: 3,
   },
   h2: {
     ...heading,
-    fontSize: 2
+    fontSize: 2,
   },
   h3: {
     ...heading,
-    fontSize: 1
+    fontSize: 1,
   },
   h4: {
     ...heading,
-    fontSize: 1
+    fontSize: 1,
   },
   a: {
     color: 'text',
     cursor: 'pointer',
     WebkitTextUnderlinePosition: 'under',
     ':hover,:focus': {
-      color: 'primary'
-    }
+      color: 'primary',
+    },
   },
   img: {
     maxWidth: '100%',
-    height: 'auto'
+    height: 'auto',
   },
   ul: { listStyle: 'square' },
-  'li > p': { my: 0 }
+  'li > p': { my: 0 },
 };
 
 export const palette = {
@@ -62,7 +62,7 @@ export const palette = {
   mutedLight: '#ccb',
   border: 'rgba(0,0,0,0.1)',
   cream: '#EFE3D5',
-  coffee: '#1c140a'
+  coffee: '#1c140a',
 };
 
 const theme = merge(base, {
@@ -88,27 +88,27 @@ const theme = merge(base, {
         elevated: palette.darkless,
         sunken: palette.darker,
         border: palette.darkless,
-        muted: palette.mutedLight
-      }
-    }
+        muted: palette.mutedLight,
+      },
+    },
   },
   fonts: {
-    body: '"sans-serif"'
+    body: '"sans-serif"',
   },
   lineHeights: {
     title: 1,
     heading: 1.125,
     subheading: 1.25,
-    body: 1.5
+    body: 1.5,
   },
   fontWeights: {
     body: 400,
     bold: 700,
-    heading: 700
+    heading: 700,
   },
   letterSpacings: {
     title: '-0.009em',
-    heading: '0.009em'
+    heading: '0.009em',
   },
   sizes: {
     ultrawide: 2048,
@@ -116,34 +116,35 @@ const theme = merge(base, {
     container: 900,
     subcontainer: 1024,
     narrowplus: 768,
-    narrow: 512
+    narrow: 512,
   },
   radii: {
     default: 6,
     extra: 9,
-    circle: 99999
+    circle: 99999,
   },
   shadows: {
     small: '0 1px 2px rgba(0, 0, 0, 0.0625), 0 2px 4px rgba(0, 0, 0, 0.0625)',
     card: '0 4px 8px rgba(0, 0, 0, 0.125)',
-    elevated: '0 1px 2px rgba(0, 0, 0, 0.0625), 0 8px 12px rgba(0, 0, 0, 0.125)'
+    elevated:
+      '0 1px 2px rgba(0, 0, 0, 0.0625), 0 8px 12px rgba(0, 0, 0, 0.125)',
   },
   text: {
     heading: {
       fontWeight: 'bold',
-      lineHeight: 'heading'
+      lineHeight: 'heading',
     },
     title: {
       fontWeight: 'bold',
       lineHeight: 'title',
       letterSpacing: 'title',
-      fontSize: [4, 5, 6]
+      fontSize: [4, 5, 6],
     },
     subtitle: {
       fontSize: [2, 3, null, null, 4],
       fontWeight: 'body',
       letterSpacing: 'heading',
-      lineHeight: 'subheading'
+      lineHeight: 'subheading',
     },
     headline: {
       fontWeight: 'bold',
@@ -151,13 +152,13 @@ const theme = merge(base, {
       letterSpacing: 'heading',
       fontSize: 4,
       mt: 3,
-      mb: 3
+      mb: 3,
     },
     caption: {
       color: 'muted',
       fontWeight: 'medium',
-      letterSpacing: 'heading'
-    }
+      letterSpacing: 'heading',
+    },
   },
   buttons: {
     primary: {
@@ -165,7 +166,7 @@ const theme = merge(base, {
       color: 'background',
       cursor: 'pointer',
       lineHeight: 'body',
-      svg: { ml: -1, mr: 2 }
+      svg: { ml: -1, mr: 2 },
     },
     muted: {
       cursor: 'pointer',
@@ -175,8 +176,8 @@ const theme = merge(base, {
       fontWeight: 'body',
       display: 'flex',
       alignItems: 'center',
-      svg: { ml: -1, mr: 2 }
-    }
+      svg: { ml: -1, mr: 2 },
+    },
   },
   cards: {
     primary: {
@@ -185,14 +186,14 @@ const theme = merge(base, {
       p: [3, 4],
       borderRadius: 'extra',
       boxShadow: 'card',
-      input: { boxShadow: 'none !important' }
+      input: { boxShadow: 'none !important' },
     },
     sunken: {
       bg: 'sunken',
       p: [3, 4],
       borderRadius: 'extra',
-      'input, a': { bg: 'header', boxShadow: 'none !important' }
-    }
+      'input, a': { bg: 'header', boxShadow: 'none !important' },
+    },
   },
   layout: {
     container: {
@@ -200,41 +201,41 @@ const theme = merge(base, {
       maxWidth: ['container', null, null, null, 'wide'],
       mx: 'auto',
       px: 3,
-      ...textStyles
+      ...textStyles,
     },
     copy: {
       width: '100%',
       maxWidth: ['narrowplus', null, null, null, 'container'],
       mx: 'auto',
       px: 3,
-      ...textStyles
+      ...textStyles,
     },
     wide: {
       width: '100%',
       maxWidth: ['wide', null, null, null, 'ultrawide'],
       mx: 'auto',
-      px: 3
+      px: 3,
     },
     narrow: {
       width: '100%',
       maxWidth: ['narrow', null, null, null, 'container'],
       mx: 'auto',
-      px: 3
-    }
+      px: 3,
+    },
   },
   styles: {
     hr: {
       border: 0,
       my: [3, 4],
       borderBottom: '1px solid',
-      borderColor: 'border'
-    }
-  }
+      borderColor: 'border',
+    },
+  },
 });
 
-export const root = theme => ({
+export const root = (theme) => ({
   backgroundColor: theme.colors.background,
-  margin: 0
+  margin: 0,
 });
 
 export default theme;

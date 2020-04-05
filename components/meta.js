@@ -2,12 +2,12 @@ import Head from 'next/head';
 import { palette } from './theme';
 
 const name = 'Adway Wadekar';
-const makeTitle = title => (title === name ? title : `${title} – ${name}`);
+const makeTitle = (title) => (title === name ? title : `${title} – ${name}`);
 
 export default ({
   title = name,
   description = "Adway Wadekar's home on the web.",
-  color = palette.primary
+  color = palette.primary,
 }) => (
   <Head>
     <meta key='og_type' property='og:type' content='website' />
@@ -31,6 +31,12 @@ export default ({
     <link
       href='https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap'
       rel='stylesheet'
+    />
+
+    <link
+      href='https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i,700&display=swap'
+      rel='stylesheet'
+      key='fonts'
     />
   </Head>
 );
