@@ -81,15 +81,6 @@ export const Footer = () => (
   </Container>
 )
 
-export const getStaticProps = async () => {
-  const questions = await fetch(
-    'https://api.airtable.com/v0/appAovruPCt70iUoO/Table%20of%20Responses?api_key=keyNCuTQNk5ASm2bd'
-  )
-    .then((res) => res.json())
-    .then((json) => orderBy(json.records, 'fields.createdTime', 'desc'))
-  return { props: { questions } }
-}
-
 export default (props) => (
   <>
     <Header />
