@@ -1,241 +1,69 @@
-import { base } from '@theme-ui/presets';
-import { merge } from 'lodash';
-
-export const breakpoints = [32, 48, 64, 96, 128].map((w) => `${w}em`);
-
-const heading = {
-  // fontFamily: 'heading',
-  lineHeight: 'heading',
-  fontWeight: 'heading',
-  letterSpacing: 'heading',
-};
-
-const textStyles = {
-  color: 'text',
-  fontFamily: '"Gentium Basic", serif',
-  fontSize: 1,
-  fontWeight: 'body',
-  lineHeight: 'body',
-  h1: {
-    ...heading,
-    fontSize: 3,
-  },
-  h2: {
-    ...heading,
-    fontSize: 2,
-  },
-  h3: {
-    ...heading,
-    fontSize: 1,
-  },
-  h4: {
-    ...heading,
-    fontSize: 1,
-  },
-  a: {
-    color: 'text',
-    cursor: 'pointer',
-    WebkitTextUnderlinePosition: 'under',
-    ':hover,:focus': {
-      color: 'primary',
-    },
-  },
-  img: {
-    maxWidth: '100%',
-    height: 'auto',
-  },
-  ul: { listStyle: 'square' },
-  'li > p': { my: 0 },
-};
+import base from '@hackclub/theme'
+import { mergeWith } from 'lodash'
 
 export const palette = {
-  darker: '#090909',
-  dark: '#121217',
-  darkless: '#252525',
-  black: '#000',
-  smoke: '#eee',
-  snow: '#fafafa',
+  darker: '#121217',
+  dark: '#17171d',
+  darkless: '#252429',
+  black: '#1f2d3d',
+  steel: '#273444',
+  slate: '#3c4858',
+  muted: '#8492a6',
+  smoke: '#e0e6ed',
+  snow: '#f9fafc',
   white: '#ffffff',
-  sand: '#f5efe6',
-  primary: '#128BD2',
-  muted: '#504c52',
-  mutedLight: '#ccb',
-  border: 'rgba(0,0,0,0.1)',
-  cream: '#EFE3D5',
-  coffee: '#1c140a',
-};
+  fuschia: '#ff2467',
+  pink: '#ff707a',
+  lilac: '#849de1',
+  yellow: '#ffaf26',
+  light: '#ffeaeb',
+  indigo: '#3b47a8',
+  purple: '#8057c5',
+  twitter: '#1da1f2',
+  facebook: '#3b5998',
+  instagram: '#e1306c'
+}
 
-const theme = merge(base, {
-  breakpoints,
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
-  fontSizes: [16, 20, 24, 32, 48, 64, 96, 128],
-  initialColorMode: 'light',
-  useColorSchemeMediaQuery: true,
-  colors: {
-    ...palette,
-    text: palette.coffee,
-    background: palette.cream,
-    elevated: palette.white,
-    sunken: palette.smoke,
-    border: palette.border,
-    primary: palette.primary,
-    muted: palette.muted,
-    modes: {
-      dark: {
-        text: palette.cream,
-        background: palette.coffee,
-        primary: palette.primary,
-        elevated: palette.darkless,
-        sunken: palette.darker,
-        border: palette.darkless,
-        muted: palette.mutedLight,
-      },
+const theme = mergeWith(
+  {
+    colors: {
+      ...palette,
+      text: palette.dark,
+      background: base.colors.white,
+      elevated: palette.light,
+      elevatedText: palette.indigo,
+      primary: base.colors.red,
+      secondary: palette.lilac,
+      muted: palette.lilac,
+      accent: palette.yellow,
+      modes: {
+        dark: {
+          text: palette.white,
+          background: '#0c0b0a',
+          elevated: palette.darkless,
+          elevatedText: palette.light,
+          primary: base.colors.red,
+          secondary: palette.pink,
+          accent: palette.yellow,
+          muted: palette.muted
+        }
+      }
     },
+    fonts: {
+      display:
+        'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      body:
+        'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      heading: 'inherit',
+      monospace: 'Menlo, monospace'
+    }
   },
-  fonts: {
-    body: '"sans-serif"',
-  },
-  lineHeights: {
-    title: 1,
-    heading: 1.125,
-    subheading: 1.25,
-    body: 1.5,
-  },
-  fontWeights: {
-    body: 400,
-    bold: 700,
-    heading: 700,
-  },
-  letterSpacings: {
-    title: '-0.009em',
-    heading: '0.009em',
-  },
-  sizes: {
-    ultrawide: 2048,
-    wide: 1536,
-    container: 900,
-    subcontainer: 1024,
-    narrowplus: 768,
-    narrow: 512,
-  },
-  radii: {
-    default: 6,
-    extra: 9,
-    circle: 99999,
-  },
-  shadows: {
-    small: '0 1px 2px rgba(0, 0, 0, 0.0625), 0 2px 4px rgba(0, 0, 0, 0.0625)',
-    card: '0 4px 8px rgba(0, 0, 0, 0.125)',
-    elevated:
-      '0 1px 2px rgba(0, 0, 0, 0.0625), 0 8px 12px rgba(0, 0, 0, 0.125)',
-  },
-  text: {
-    heading: {
-      fontWeight: 'bold',
-      lineHeight: 'heading',
-    },
-    title: {
-      fontWeight: 'bold',
-      lineHeight: 'title',
-      letterSpacing: 'title',
-      fontSize: [4, 5, 6],
-    },
-    subtitle: {
-      fontSize: [2, 3, null, null, 4],
-      fontWeight: 'body',
-      letterSpacing: 'heading',
-      lineHeight: 'subheading',
-    },
-    headline: {
-      fontWeight: 'bold',
-      lineHeight: 'heading',
-      letterSpacing: 'heading',
-      fontSize: 4,
-      mt: 3,
-      mb: 3,
-    },
-    caption: {
-      color: 'muted',
-      fontWeight: 'medium',
-      letterSpacing: 'heading',
-    },
-  },
-  buttons: {
-    primary: {
-      bg: 'primary',
-      color: 'background',
-      cursor: 'pointer',
-      lineHeight: 'body',
-      svg: { ml: -1, mr: 2 },
-    },
-    muted: {
-      cursor: 'pointer',
-      bg: 'transparent',
-      color: 'text',
-      px: 0,
-      fontWeight: 'body',
-      display: 'flex',
-      alignItems: 'center',
-      svg: { ml: -1, mr: 2 },
-    },
-  },
-  cards: {
-    primary: {
-      bg: 'elevated',
-      color: 'text',
-      p: [3, 4],
-      borderRadius: 'extra',
-      boxShadow: 'card',
-      input: { boxShadow: 'none !important' },
-    },
-    sunken: {
-      bg: 'sunken',
-      p: [3, 4],
-      borderRadius: 'extra',
-      'input, a': { bg: 'header', boxShadow: 'none !important' },
-    },
-  },
-  layout: {
-    container: {
-      width: '100%',
-      maxWidth: ['container', null, null, null, 'wide'],
-      mx: 'auto',
-      px: 3,
-      ...textStyles,
-    },
-    copy: {
-      width: '100%',
-      maxWidth: ['narrowplus', null, null, null, 'container'],
-      mx: 'auto',
-      px: 3,
-      ...textStyles,
-    },
-    wide: {
-      width: '100%',
-      maxWidth: ['wide', null, null, null, 'ultrawide'],
-      mx: 'auto',
-      px: 3,
-    },
-    narrow: {
-      width: '100%',
-      maxWidth: ['narrow', null, null, null, 'container'],
-      mx: 'auto',
-      px: 3,
-    },
-  },
-  styles: {
-    hr: {
-      border: 0,
-      my: [3, 4],
-      borderBottom: '1px solid',
-      borderColor: 'border',
-    },
-  },
-});
+  base,
+  {
+    h1: {
+      fontSize: 3
+    }
+  }
+)
 
-export const root = (theme) => ({
-  backgroundColor: theme.colors.background,
-  margin: 0,
-});
-
-export default theme;
+export default theme

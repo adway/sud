@@ -1,3 +1,3 @@
-# Adway Wadekar
+# [sud.adway.io](https://sud.adway.io)
 
-My home on the web.
+A site prepared for submission to the Sigma Xi Student Research Showcase for my project, "Nature and Nurture: Understanding the Etiology of Substance Use Disorders Among Adolescents"
