@@ -1,12 +1,11 @@
 {
   "name": "sud",
   "version": "1.0.0",
-  "author": "Adway Wadekar <adway@adway.i>",
+  "author": "Adway Wadekar <adway@adway.io>",
   "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "next",
-    "now-build": "next build",
     "start": "next"
   },
   "dependencies": {
