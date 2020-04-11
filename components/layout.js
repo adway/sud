@@ -41,20 +41,17 @@ export const Header = () => (
       alignItems: 'center',
       px: 3,
       py: 4,
-      'a + a': { mx: [2, 3] }
+      a: { mx: [2, 3] }
     }}
   >
-    <Link href="/abstract">
+    <Link href="/">
       <NavLink>Home</NavLink>
     </Link>
     <Link href="/abstract">
       <NavLink>Abstract</NavLink>
     </Link>
-    <Link href="/Slideshow">
+    <Link href="/slideshow">
       <NavLink>Slideshow</NavLink>
-    </Link>
-    <Link href="/Slideshow">
-      <NavLink>Video</NavLink>
     </Link>
     <Box sx={{ mx: 'auto' }} />
     <ColorButton
@@ -84,7 +81,9 @@ export const Footer = () => (
 export default (props) => (
   <>
     <Header />
-    <Container variant="container">{props.children}</Container>
+    <Container variant="container" {...props}>
+      {props.children}
+    </Container>
     <Footer />
   </>
 )

@@ -1,6 +1,7 @@
 import React from 'react'
 import App from 'next/app'
 import { ThemeProvider } from 'theme-ui'
+import Layout from '../components/layout'
 
 import Meta from '../components/meta'
 
