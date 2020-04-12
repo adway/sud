@@ -32,9 +32,9 @@ const theme = {
   colors: {
     ...colors,
     text: colors.black,
-    background: colors.white,
+    background: colors.snow,
     elevated: colors.white,
-    sheet: colors.snow,
+    sheet: colors.white,
     sunken: colors.smoke,
     border: colors.smoke,
     placeholder: colors.muted,
@@ -59,9 +59,9 @@ const theme = {
   },
   fonts: {
     heading:
-      '"Phantom Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     body:
-      '"Phantom Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     monospace: '"SF Mono", "Roboto Mono", Menlo, Consolas, monospace'
   },
   lineHeights: {
@@ -106,8 +106,9 @@ const theme = {
   },
   text: {
     heading: {
-      fontWeight: 'bold',
-      lineHeight: 'heading'
+      fontWeight: 'heading',
+      lineHeight: 'heading',
+      fontFamily: 'heading'
     },
     title: {
       fontSize: [4, 5, 6],
@@ -140,6 +141,10 @@ const theme = {
       fontWeight: 'medium',
       letterSpacing: 'headline',
       lineHeight: 'caption'
+    },
+    body: {
+      fontWeight: 'body',
+      lineHeight: 'body'
     }
   },
   alerts: {
@@ -279,9 +284,7 @@ const theme = {
       fontSize: 0
     },
     p: {
-      color: 'text',
-      fontWeight: 'body',
-      lineHeight: 'body',
+      variant: 'text.body',
       my: 3
     },
     img: {
