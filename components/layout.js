@@ -16,6 +16,7 @@ export const ColorButton = ({ sx, ...props }) => {
       {...props}
       sx={{
         color: 'text',
+
         bg: 'background',
         borderRadius: 'circle',
         transition: 'box-shadow .125s ease-in-out',
@@ -41,7 +42,7 @@ export const Header = () => (
       alignItems: 'center',
       px: 3,
       py: 4,
-      a: { mx: [2, 3] }
+      'a+a': { ml: [3, 4] }
     }}
   >
     <Link href="/">
@@ -53,6 +54,7 @@ export const Header = () => (
     <Link href="/slideshow">
       <NavLink>Slideshow</NavLink>
     </Link>
+
     <Box sx={{ mx: 'auto' }} />
     <ColorButton
       onClick={(e) => {

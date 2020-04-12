@@ -74,7 +74,7 @@ export default ({ questions = [] }) => {
             Submit
           </Button>
         </Box>
-        <Text>
+        <Text sx={{ color: 'green', py: 3 }}>
           {submitted
             ? "Thank you for submitting! I'll respond on this website shortly."
             : ''}
@@ -84,7 +84,7 @@ export default ({ questions = [] }) => {
   )
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const questions = await fetch(
     'https://api.airtable.com/v0/appAovruPCt70iUoO/Table%20of%20Responses?api_key=keyNCuTQNk5ASm2bd'
   )

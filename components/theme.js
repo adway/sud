@@ -59,7 +59,7 @@ const theme = {
   },
   fonts: {
     heading:
-      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      '"system-ui", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     body:
       'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     monospace: '"SF Mono", "Roboto Mono", Menlo, Consolas, monospace'
@@ -250,6 +250,11 @@ const theme = {
       maxWidth: ['narrow', null, 'narrowPlus', null, 'layout']
     }
   },
+  links: {
+    nav: {
+      fontWeight: 'bold'
+    }
+  },
   styles: {
     root: {
       fontFamily: 'body',
@@ -261,7 +266,8 @@ const theme = {
     },
     h1: {
       variant: 'text.heading',
-      fontSize: 4
+      fontSize: 4,
+      fontWeight: 'bold'
     },
     h2: {
       variant: 'text.heading',
