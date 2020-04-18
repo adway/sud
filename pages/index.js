@@ -1,26 +1,35 @@
 import { useState } from 'react'
 import Layout from '../components/layout'
 import fetch from 'isomorphic-unfetch'
-import { orderBy } from 'lodash'
 import { Styled, Box, Embed, Label, Text, Textarea, Button } from 'theme-ui'
+import { getQuestions } from './api/questions'
 
 import Question from '../components/question'
 
-export default ({ questions = [] }) => {
+export default props => {
   const [question, setQuestion] = useState('')
   const [submitted, setSubmit] = useState(false)
+  const [questions, setQuestions] = useState(props.questions)
+
+  const updateQuestions = async () => {
+    const questions = await fetch('/api/questions').then(res => res.json())
+
+    setQuestions(questions)
+  }
+
   const submitForm = () =>
     fetch('api/submit', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
-        // 'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: JSON.stringify({ question: question })
-    }).then((res) => {
+    }).then(res => {
       res.status === 200 ? setSubmit(true) : ''
       setQuestion('')
+      updateQuestions()
     })
+
   return (
     <Layout>
       <Styled.h1>Substance Use Disorders Among Adolescents</Styled.h1>
@@ -54,7 +63,7 @@ export default ({ questions = [] }) => {
         </ul>
         <Box
           as="form"
-          onSubmit={(e) => {
+          onSubmit={e => {
             e.preventDefault()
             submitForm()
           }}
@@ -62,7 +71,7 @@ export default ({ questions = [] }) => {
           <Label htmlFor="Question">Question or Comment</Label>
           <Textarea
             value={question}
-            onChange={(e) => {
+            onChange={e => {
               setQuestion(e.target.value)
             }}
             name="Question"
@@ -84,11 +93,11 @@ export default ({ questions = [] }) => {
   )
 }
 
-export const getServerSideProps = async () => {
-  const questions = await fetch(
-    'https://api.airtable.com/v0/appAovruPCt70iUoO/Table%20of%20Responses?api_key=keyNCuTQNk5ASm2bd'
-  )
-    .then((res) => res.json())
-    .then((json) => orderBy(json.records, 'createdTime', 'desc'))
+export const getServerSideProps = async context => {
+  const qs = await getQuestions()
+
+  // this is super hacky, not sure why it's happening but this works - tmb
+  let questions = JSON.parse(JSON.stringify(qs))
+
   return { props: { questions } }
 }

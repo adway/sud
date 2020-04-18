@@ -18,10 +18,8 @@ export default (req, res) => {
         console.error(err)
         return
       }
-      records.forEach(function (record) {
-        console.log(record.getId())
-      })
+      return res.status(200).end()
     }
   )
-  res.status(200).end()
+
 }

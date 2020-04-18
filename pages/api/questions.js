@@ -1,12 +1,15 @@
 import Airtable from 'airtable'
+import { sortBy, reverse } from 'lodash'
 
 var base = new Airtable({ apiKey: 'keyNCuTQNk5ASm2bd' }).base(
   'appAovruPCt70iUoO'
 )
 
-export default (req, res) => {
-  let questionArray = []
-  base('Table of Responses')
+export function getQuestions() {
+  return new Promise((resolve, reject) => {
+    let questionArray = []
+
+    base('Table of Responses')
     .select({
       view: 'Grid view'
     })
@@ -24,13 +27,13 @@ export default (req, res) => {
         fetchNextPage()
       },
       function done(err) {
-        if (err) {
-          console.error(err)
-          return
-        }
-
-        res.json(questionArray)
-        return
+        resolve(questionArray)
       }
     )
+  })
+}
+
+export default async (req, res) => {
+    let questions = await getQuestions()
+    res.json(reverse(sortBy(questions, 'createdTime')))
 }

@@ -76,7 +76,7 @@ export const Footer = () => (
       a: { color: 'primary', mx: 2 }
     }}
   >
-    &copy; Adway S. Wadekar
+    &copy; Adway S. Wadekar (with help from <Link href="https://tmb.sh">Theo Bleier</Link>)
   </Container>
 )
 
