@@ -1,4 +1,4 @@
-require('dotenv').config
+require('dotenv').config()
 const withMDX = require('@next/mdx')()
 module.exports = withMDX({
   pageExtensions: ['js', 'mdx'],

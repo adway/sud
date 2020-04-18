@@ -1,5 +1,5 @@
 const Airtable = require('airtable')
-var base = new Airtable({ apiKey: 'keyNCuTQNk5ASm2bd' }).base(
+var base = new Airtable({ apiKey: process.env.AIRTABLE_KEY }).base(
   'appAovruPCt70iUoO'
 )
 
@@ -21,5 +21,4 @@ export default (req, res) => {
       return res.status(200).end()
     }
   )
-
 }

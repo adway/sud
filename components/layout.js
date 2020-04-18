@@ -5,7 +5,8 @@ import {
   Box,
   Container,
   Flex,
-  NavLink
+  NavLink,
+  Text
 } from 'theme-ui'
 import Link from 'next/link'
 
@@ -73,10 +74,14 @@ export const Footer = () => (
       alignItems: 'center',
       justifyContent: 'center',
       py: 5,
-      a: { color: 'primary', mx: 2 }
+      a: { color: 'primary' }
     }}
   >
-    &copy; Adway S. Wadekar (with help from <Link href="https://tmb.sh">Theo Bleier</Link>)
+    <Text>
+      Project & Website by <Link href="https://adway.io">Adway Wadekar</Link>{' '}
+      with help on the site from <Link href="https://tmb.sh">Theo Bleier</Link>
+      {'.'}
+    </Text>
   </Container>
 )
 
