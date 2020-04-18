@@ -6,13 +6,13 @@ import { getQuestions } from './api/questions'
 
 import Question from '../components/question'
 
-export default props => {
+export default (props) => {
   const [question, setQuestion] = useState('')
   const [submitted, setSubmit] = useState(false)
   const [questions, setQuestions] = useState(props.questions)
 
   const updateQuestions = async () => {
-    const questions = await fetch('/api/questions').then(res => res.json())
+    const questions = await fetch('/api/questions').then((res) => res.json())
 
     setQuestions(questions)
   }
@@ -24,7 +24,7 @@ export default props => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ question: question })
-    }).then(res => {
+    }).then((res) => {
       res.status === 200 ? setSubmit(true) : ''
       setQuestion('')
       updateQuestions()
@@ -63,7 +63,7 @@ export default props => {
         </ul>
         <Box
           as="form"
-          onSubmit={e => {
+          onSubmit={(e) => {
             e.preventDefault()
             submitForm()
           }}
@@ -71,7 +71,7 @@ export default props => {
           <Label htmlFor="Question">Question or Comment</Label>
           <Textarea
             value={question}
-            onChange={e => {
+            onChange={(e) => {
               setQuestion(e.target.value)
             }}
             name="Question"
@@ -93,7 +93,7 @@ export default props => {
   )
 }
 
-export const getServerSideProps = async context => {
+export const getServerSideProps = async (context) => {
   const qs = await getQuestions()
 
   // this is super hacky, not sure why it's happening but this works - tmb
