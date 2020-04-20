@@ -8,17 +8,16 @@ import {
   NavLink,
   Text
 } from 'theme-ui'
+import { Zap } from 'react-feather'
 import Link from 'next/link'
 
 export const ColorButton = ({ sx, ...props }) => {
   const [mode, setMode] = useColorMode()
   return (
-    <Button
+    <IconButton
       {...props}
       sx={{
         color: 'text',
-
-        bg: 'background',
         borderRadius: 'circle',
         transition: 'box-shadow .125s ease-in-out',
         ':hover,:focus': {
@@ -30,8 +29,8 @@ export const ColorButton = ({ sx, ...props }) => {
       onClick={() => setMode(mode === 'dark' ? 'light' : 'dark')}
       title="Reverse color scheme"
     >
-      Change Theme
-    </Button>
+      <Zap size={24} />
+    </IconButton>
   )
 }
 

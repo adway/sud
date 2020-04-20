@@ -1,5 +1,5 @@
 import Layout from '../components/layout.js'
-import { Text, Embed, Container } from 'theme-ui'
+import { Text, Embed, Container, Box } from 'theme-ui'
 
 <Layout sx={{p: {
   lineHeight: 2,
@@ -8,15 +8,16 @@ import { Text, Embed, Container } from 'theme-ui'
 
 # Slideshow
 
-<Container>
-<iframe
-  src="https://docs.google.com/presentation/d/e/2PACX-1vSHWbJHc-3tH58goN0UtTyxGSa2HatPfDEVvO04T-6q2hiXX6qFYfoz_2Eh_7PeDdsFyZdFG22JXQbb/embed?start=false&loop=false&delayms=60000"
-  frameborder="0"
-  width="1200"
-  height="749"
-  allowfullscreen="true"
-  mozallowfullscreen="true"
-  webkitallowfullscreen="true"
-></iframe>
-</Container>
+<Box sx={{ bg: 'sheet', p: 4, mt: 3, borderRadius: 'extra' }}>
+  <iframe
+    src="https://docs.google.com/presentation/d/e/2PACX-1vSHWbJHc-3tH58goN0UtTyxGSa2HatPfDEVvO04T-6q2hiXX6qFYfoz_2Eh_7PeDdsFyZdFG22JXQbb/embed?start=false&loop=false&delayms=60000"
+    frameborder="0"
+    width="100%"
+    height="700"
+    allowfullscreen="true"
+    mozallowfullscreen="true"
+    webkitallowfullscreen="true"
+  ></iframe>
+</Box>
+
 </Layout>
