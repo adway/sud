@@ -34,14 +34,18 @@ export default (props) => {
     <Layout>
       <Styled.h1>Substance Use Disorders Among Adolescents</Styled.h1>
       <Styled.h2>An Introduction</Styled.h2>
-
-      <Embed src="https://www.youtube.com/embed/5HNYG6tN67U" />
-
+      <Styled.h3>Project Video</Styled.h3>
+      <Embed src="https://www.youtube.com/embed/MC-TfYpYF3I" />
+      <Styled.h3>About Me</Styled.h3>
+      <Text>
+        Hi, I'm Adway! I'm a junior at Saint John's High School in Shrewsbury,
+        MA.
+      </Text>
       <Box
         sx={{
           bg: 'sheet',
           p: 3,
-          mt: 3,
+          mt: 5,
           ul: { listStyle: 'none' },
           borderRadius: 'extra',
           h1: {
