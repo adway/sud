@@ -262,7 +262,8 @@ const theme = {
       fontWeight: 'body',
       color: 'text',
       margin: 0,
-      minHeight: '100vh'
+      minHeight: '100vh',
+      fontSize: 1
     },
     h1: {
       variant: 'text.heading',
